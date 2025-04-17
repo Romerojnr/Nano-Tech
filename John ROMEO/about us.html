@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova Solutions - Innovative Technology Solutions</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        h1, h2, h3 {
+            color: #192a56;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #192a56;
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #4cd137;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #4cd137;
+        }
+        
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            text-align: center;
+            background: linear-gradient(rgba(25, 42, 86, 0.8), rgba(25, 42, 86, 0.8)), url('/api/placeholder/1200/600') center/cover;
+            color: white;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #4cd137;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: #44bd32;
+            transform: translateY(-3px);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .services-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            color: #4cd137;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .portfolio-intro {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(25, 42, 86, 0.9);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: 0.5s ease;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+        
+        .portfolio-item:hover .portfolio-image {
+            transform: scale(1.1);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #192a56;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            color: #4cd137;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #4cd137;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            transition: 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background-color: #4cd137;
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #ddd;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+            }
+            
+            .nav-links li {
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Nano<span>Tech</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="about us.html">About</a></li>
+                    <li><a href="Blog.html">Blog</a></li>
+                    <li><a href="contact us.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Innovative Technology Solutions</h1>
+        <p>We build cutting-edge digital experiences that transform businesses and delight users. Our team of experts delivers innovative solutions tailored to your unique needs.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About TechNova Solutions</h2>
+                    <p>Founded in 2015, TechNova Solutions has been at the forefront of technological innovation, helping businesses of all sizes navigate the complex digital landscape. Our mission is to deliver exceptional technology solutions that drive growth, efficiency, and competitive advantage.</p>
+                    <p>We're a team of passionate technologists, designers, and strategists who combine creativity with technical expertise to solve complex problems. With a client-first approach, we ensure that every solution we deliver is tailored to meet your specific business objectives.</p>
+                    <p>At TechNova, we pride ourselves on staying ahead of the curve, continuously exploring emerging technologies and methodologies to deliver future-proof solutions that help our clients thrive in a rapidly evolving digital world.</p>
+                </div>
+                <div class="about-image">
+                    <img src="team.jpg" alt="TechNova Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="services-intro">
+                <h2>Our Services</h2>
+                <p>We offer a comprehensive suite of technology services to help your business thrive in the digital age.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>We create responsive, high-performance websites and web applications that deliver exceptional user experiences across all devices and platforms.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Mobile App Development</h3>
+                    <p>Our expert developers build native and cross-platform mobile applications that engage users and drive business growth.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>Cybersecurity Solutions</h3>
+                    <p>Protect your business with our comprehensive cybersecurity services, including vulnerability assessments, penetration testing, and security strategy development.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI & Machine Learning</h3>
+                    <p>Leverage the power of artificial intelligence and machine learning to gain insights, automate processes, and create intelligent applications.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3>Cloud Solutions</h3>
+                    <p>We help businesses migrate to the cloud, optimize cloud infrastructure, and develop cloud-native applications for improved scalability and performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Data Analytics</h3>
+                    <p>Turn your data into actionable insights with our advanced analytics services, helping you make informed decisions and drive business growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="portfolio-intro">
+                <h2>Our Portfolio</h2>
+                <p>Explore some of our recent projects that showcase our expertise and capabilities.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="E-COMMERCE.avif" alt="E-commerce Platform" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3>E-commerce Platform</h3>
+                        <p>A scalable e-commerce solution with integrated payment processing and inventory management.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="mobile app.jpg" alt="FinTech Mobile App" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3>FinTech Mobile App</h3>
+                        <p>A secure and intuitive mobile banking application with advanced transaction features.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="health dashboard.webp" alt="Healthcare Platform" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3>Healthcare Platform</h3>
+                        <p>A HIPAA-compliant telemedicine platform connecting patients with healthcare providers.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="AI-Powered-CRM.webp" alt="AI-Powered CRM" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3>AI-Powered CRM</h3>
+                        <p>A smart customer relationship management system with predictive analytics capabilities.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="roll.jpg" alt="IoT Fleet Management" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3>IoT Fleet Management</h3>
+                        <p>An IoT solution for real-time tracking and management of vehicle fleets with analytics dashboard.</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="education.jpg" alt="Educational Platform" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3>Educational Platform</h3>
+                        <p>A comprehensive learning management system with interactive content and progress tracking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TechNova Solutions</h3>
+                    <p>Delivering innovative technology solutions that drive business growth and digital transformation.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">t</a>
+                        <a href="#" class="social-icon">in</a>
+                        <a href="#" class="social-icon">ig</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile App Development</a></li>
+                        <li><a href="#">Cybersecurity</a></li>
+                        <li><a href="#">AI & Machine Learning</a></li>
+                        <li><a href="#">Cloud Solutions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>123 Tech Avenue<br>Innovation District<br>San Francisco, CA 94105</p>
+                    <p>Phone: (555) 123-4567<br>Email: info@technova.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 NanoTech Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
