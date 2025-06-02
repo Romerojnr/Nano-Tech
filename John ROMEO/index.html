@@ -213,7 +213,7 @@
             margin-bottom: 20px;
         }
         
-        /* Portfolio Section */
+        
         .portfolio {
             padding: 100px 0;
         }
@@ -279,7 +279,7 @@
             margin-top: 10px;
         }
         
-        /* Call to Action */
+        
         .cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             padding: 80px 0;
@@ -299,7 +299,7 @@
             margin-right: auto;
         }
         
-        /* Footer */
+        
         footer {
             background-color: var(--dark);
             color: #ddd;
@@ -378,7 +378,7 @@
             font-size: 14px;
         }
         
-        /* Responsive */
+        
         @media screen and (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -416,7 +416,7 @@
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
+    
     <header>
         <div class="container">
             <nav class="navbar">
@@ -434,7 +434,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    
     <section class="hero">
         <div class="container">
             <h1>Innovative Tech Solutions for Modern Business</h1>
@@ -446,7 +446,7 @@
         </div>
     </section>
 
-    <!-- Services Section -->
+    
     <section id="services" class="services">
         <div class="container">
             <div class="section-title">
@@ -482,7 +482,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    
     <section id="portfolio" class="portfolio">
         <div class="container">
             <div class="section-title">
@@ -542,7 +542,7 @@
         </div>
     </section>
 
-    <!-- Call to Action -->
+    
     <section class="cta">
         <div class="container">
             <h2>Ready to Transform Your Business?</h2>
@@ -551,7 +551,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    
     <footer id="contact">
         <div class="container">
             <div class="footer-grid">
@@ -590,16 +590,19 @@
                     <ul class="footer-contact">
                         <li>
                             <span class="contact-icon">📍</span>
-                            <span>123 Tech Street, Innovation City, 10001</span>
+                            <span><p>📍 Accra, Ghana</p></span>
                         </li>
                         <li>
                             <span class="contact-icon">📞</span>
-                            <span>+1 (555) 123-4567</span>
+                            <span><a href="tel:+233 53 269 1145">📞 +233 53 269 1145</a></span>
                         </li>
                         <li>
                             <span class="contact-icon">✉️</span>
-                            <span>info@nanotech.com</span>
+                            <span><a href="mailto:info@nanotech.com">📧 info@nanotech.com</a></span>
                         </li>
+                        
+                        
+                        
                     </ul>
                 </div>
             </div>
@@ -610,7 +613,7 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
+        
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         
@@ -618,7 +621,7 @@
             navLinks.classList.toggle('active');
         });
         
-        // Smooth scrolling for navigation links
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -633,12 +636,12 @@
                         behavior: 'smooth'
                     });
                     
-                    // Close mobile menu if open
+                    
                     if (navLinks.classList.contains('active')) {
                         navLinks.classList.remove('active');
                     }
                     
-                    // Update active link
+                    
                     document.querySelectorAll('.nav-links a').forEach(link => {
                         link.classList.remove('active');
                     });
@@ -647,7 +650,7 @@
             });
         });
         
-        // Active navigation link based on scroll position
+        
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-links a');
